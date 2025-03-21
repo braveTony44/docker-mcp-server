@@ -30,7 +30,7 @@ Add the server to your MCP configuration file (`cline_mcp_settings.json`):
   "mcpServers": {
     "dockerMcp": {
       "command": "node",
-      "args": ["D:/Lern2025/mcp/docker-mcp/index.js"],
+      "args": ["docker-mcp/index.js"],
       "env": {},
       "disabled": false,
       "autoApprove": []
