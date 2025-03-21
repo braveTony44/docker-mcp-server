@@ -22,6 +22,30 @@ export const dockerConfig = {
   socketPath: process.env.DOCKER_SOCKET || '/var/run/docker.sock'
 };
 ```
+## MCP Configuration ⚡
+Add the server to your MCP configuration file (`cline_mcp_settings.json`):
+
+```json
+{
+  "mcpServers": {
+    "dockerMcp": {
+      "command": "node",
+      "args": ["D:/Lern2025/mcp/docker-mcp/index.js"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+This configuration will:
+1. Make the Docker MCP server available system-wide
+2. Auto-start with your development environment
+3. Allow seamless integration with other MCP tools
+
+
+
 
 ## Available MCP Tools
 ### 1. createConatinerByImage
