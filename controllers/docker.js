@@ -1,7 +1,7 @@
 import docker from "../config/docker.config.js";
 import { isImageAvailable, pullImageByNameAndTag } from "../utils/helpers.js";
 
-async function createConatiner(image_name, tag) {
+async function createContainer(image_name, tag) {
   try {
     if (!tag) {
         tag = "latest";
@@ -22,7 +22,7 @@ async function createConatiner(image_name, tag) {
   }
 }
 
-async function getConatinerById(container_id){
+async function getContainerById(container_id){
   try {
     if(!container_id){
       return {status:"invalid arguments",message:"container_id is required"}
@@ -35,7 +35,7 @@ async function getConatinerById(container_id){
 }
 
 
-async function getConatinerStatus(container_id){
+async function getContainerStatus(container_id){
   try {
     const conatiner = await docker.getContainer(container_id).inspect();
   return {status:"success",message:"container status",container_id:conatiner.Id,conatiner_status:conatiner.State}
@@ -97,5 +97,5 @@ async function startPauseKill(container_id, desired_state) {
   }
 }
 
-export {createConatiner,getConatinerById,startPauseKill,getConatinerStatus}
+export {createContainer,getContainerById,startPauseKill,getContainerStatus}
 
